@@ -28,9 +28,7 @@ fi
 cd Prusa-Firmware-build || exit 7
 BUILD_PATH="$( pwd -P )"
 
-if [ ! -f "$SCRIPT_PATH/Firmware/Configuration_prusa.h" ]; then
-    cp $SCRIPT_PATH/Firmware/variants/Custom_mk3.h $SCRIPT_PATH/Firmware/Configuration_prusa.h || exit 8
-fi
+yes | cp -rf $SCRIPT_PATH/Firmware/variants/Custom_mk3s.h $SCRIPT_PATH/Firmware/Configuration_prusa.h || exit 8
 
 $BUILD_ENV_PATH/arduino $SCRIPT_PATH/Firmware/Firmware.ino --verify --board PrusaResearchRambo:avr:rambo --pref build.path=$BUILD_PATH --pref compiler.warning_level=all || exit 9
 
@@ -39,3 +37,5 @@ export ARDUINO=$BUILD_ENV_PATH
 cd $SCRIPT_PATH/lang
 ./lang-build.sh || exit 10
 ./fw-build.sh || exit 11
+
+rm $SCRIPT_PATH/Firmware/Configuration_prusa.h

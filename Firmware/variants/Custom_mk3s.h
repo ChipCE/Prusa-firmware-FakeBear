@@ -283,8 +283,8 @@
 #define TMC2130_CURRENTS_R {16, 20, 35, 30}
 #define TMC2130_CURRENTS_R_HOME {8, 10, 20, 18}
 #else
-#define TMC2130_CURRENTS_H {20, 24, 35, 37}  // default holding currents for all axes
-#define TMC2130_CURRENTS_R {20, 24, 35, 37}  // default running currents for all axes
+#define TMC2130_CURRENTS_H {20, 24, 35, 32}  // default holding currents for all axes
+#define TMC2130_CURRENTS_R {20, 24, 35, 32}  // default running currents for all axes
 #define TMC2130_CURRENTS_R_HOME {8, 10, 20, 18}
 #endif
 // 10 17
